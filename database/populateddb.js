@@ -65,19 +65,17 @@ INSERT INTO tasks (name, description, category_id, urgency_id) VALUES
   ('Client Presentation', 'Prepare slides for the upcoming client meeting', 2, 2);
 `;
 
-
 async function main() {
-    console.log("Seeding database...");
-    try {
-      await client.connect();
-      await client.query(SQL);
-      console.log("Database seeded successfully.");
-    } catch (err) {
-      console.error("Error seeding database:", err);
-    } finally {
-      await client.end();
-    }
+  console.log("Seeding database...");
+  try {
+    await client.connect();
+    await client.query(SQL);
+    console.log("Database seeded successfully.");
+  } catch (err) {
+    console.error("Error seeding database:", err);
+  } finally {
+    await client.end();
+  }
 }
 
 main();
-  
