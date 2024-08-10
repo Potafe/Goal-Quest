@@ -1,13 +1,36 @@
 const asyncHandler = require("express-async-handler");
+const database = require("../database/queries");
 
-exports.createUrgency = asyncHandler(async function (req, res) {
-  res.send("CREATE URGENCY");
+exports.createUrgencyGet = asyncHandler(async function (req, res) {
+  res.send("CREATE URGENCY GET");
 });
 
-exports.readUrgency = asyncHandler(async function (req, res) {
-  res.send("READ URGENCY");
+exports.createUrgencyPost = asyncHandler(async function (req, res) {
+  res.send("CREATE URGENCY POST");
 });
 
-exports.deleteUrgency = asyncHandler(async function (req, res) {
-  res.send("DELETE URGENCY");
+exports.readUrgencyGet = asyncHandler(async function (req, res) {
+  const { categoryId } = req.params;
+  const urgencies = await database.getAllUrgencyById(categoryId);
+  res.render("urgencies", {
+    title: categoryId === 1 ? "RIGHT NOW!!!" : "TV Shows",
+    categoryId: categoryId,
+    urgencies: urgencies,
+  });
+});
+
+exports.updateUrgencyGet = asyncHandler(async function (req, res) {
+  res.send("UPDATE URGENCY GET");
+});
+
+exports.updateUrgencyPost = asyncHandler(async function (req, res) {
+  res.send("UPDATE URGENCY POST");
+});
+
+exports.deleteUrgencyGet = asyncHandler(async function (req, res) {
+  res.send("DELETE URGENCY GET");
+});
+
+exports.deleteUrgencyPost = asyncHandler(async function (req, res) {
+  res.send("DELETE URGENCY POST");
 });

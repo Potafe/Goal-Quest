@@ -7,8 +7,6 @@ var engine = require("ejs-mate");
 
 var indexRouter = require("./routes/index");
 var categoryRouter = require("./routes/categoryRouter");
-var tasksRouter = require("./routes/tasksRouter");
-var urgencyRouter = require("./routes/urgencyRoute");
 
 var app = express();
 
@@ -25,8 +23,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/categories", categoryRouter);
-app.use("/categories/:categoryId/urgency", urgencyRouter);
-app.use("/categories/:categoryId/urgency/:urgencyId/tasks", tasksRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,21 +1,33 @@
 const asyncHandler = require("express-async-handler");
 
-exports.createTask = asyncHandler(async function (req, res) {
-  res.send("CREATE TASK");
+exports.createTaskGet = asyncHandler(async function (req, res) {
+  res.send("CREATE TASK GET");
 });
 
-exports.updateTask = asyncHandler(async function (req, res) {
-  res.send("UPDATE TASK");
+exports.createTaskPost = asyncHandler(async function (req, res) {
+  res.send("CREATE TASK POST");
+});
+
+exports.updateTaskGet = asyncHandler(async function (req, res) {
+  res.send("UPDATE TASK GET");
+});
+
+exports.updateTaskPost = asyncHandler(async function (req, res) {
+  res.send("UPDATE TASK POST");
 });
 
 exports.readTask = asyncHandler(async function (req, res) {
-  res.send("READ A TASK");
+  res.send("READ A TASK GET");
 });
 
 exports.readTasks = asyncHandler(async function (req, res) {
-  res.send("READ TASKS");
+  res.send("READ TASKS GET");
 });
 
-exports.deleteTask = asyncHandler(async function (req, res) {
-  res.send("DELETE A TASK");
+exports.deleteTaskGet = asyncHandler(async function (req, res) {
+  res.send("DELETE A TASK GET");
+});
+
+exports.deleteTaskPost = asyncHandler(async function (req, res) {
+  res.send("DELETE A TASK POST");
 });
