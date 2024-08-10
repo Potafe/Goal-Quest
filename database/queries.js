@@ -1,12 +1,19 @@
 const { pool } = require("./pool");
 
 async function getAllCategories() {
-  console.log("hl");
   const result = await pool.query("SELECT * FROM categories;");
-  console.log("fk");
+  return result.rows;
+}
+
+async function getAllUrgencyById(categoryId) {
+  const result = await pool.query(
+    "SELECT * FROM urgency WHERE category_id=$1;",
+    [categoryId]
+  );
   return result.rows;
 }
 
 module.exports = {
   getAllCategories,
+  getAllUrgencyById,
 };
