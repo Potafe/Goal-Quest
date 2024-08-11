@@ -4,7 +4,7 @@ const database = require("../database/queries");
 exports.readCategories = asyncHandler(async function (req, res) {
   try {
     const categories = await database.getAllCategories();
-    res.render("categories", { categories, title: "Categories" });
+    res.render("categories", { categories, title: "CATEGORIES" });
     console.log("AT CATEGORY PAGE NOW...");
   } catch (err) {
     console.error("Error fetching categories:", err);

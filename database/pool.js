@@ -1,13 +1,12 @@
 const { Client, Pool } = require("pg");
-require('dotenv').config()
+require("dotenv").config();
 
 const client = new Client({
-    connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL,
 });
 
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL,
 });
 
 module.exports = { client, pool };
-

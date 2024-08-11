@@ -2,19 +2,17 @@
 
 <div>
   <div class="d-flex my-1 align-items-center">
-    <h5>
-      TASK URGENCIES
-    </h5>
+    <h5>TASK URGENCIES</h5>
     <a class="ms-auto" href="/categories">Back</a>
   </div>
 
   <div class="row g-3">
-    <% urgencies.forEach(urgency => { %>
+    <% urgencies.forEach((urgency, index) => { %>
     <div class="col col-md-4">
       <div class="card shadow-sm">
         <div class="card-body">
           <a
-            href="/categories/<%= urgency.category_id %>/urgencies/<%= urgency.id %>/items"
+            href="/categories/<%= urgency.category_id %>/urgencies/<%= (index % 5) + 1 %>/tasks"
           >
             <h6 class="card-title"><%= urgency.name %></h6>
           </a>

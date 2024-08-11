@@ -13,7 +13,7 @@ exports.readUrgencyGet = asyncHandler(async function (req, res) {
   const { categoryId } = req.params;
   const urgencies = await database.getAllUrgencyById(categoryId);
   res.render("urgencies", {
-    title: categoryId === 1 ? "RIGHT NOW!!!" : "TV Shows",
+    title: categoryId === 1 ? "PROFESSIONAL" : "PERSONAL",
     categoryId: categoryId,
     urgencies: urgencies,
   });

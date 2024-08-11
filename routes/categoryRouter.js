@@ -46,7 +46,7 @@ categoryRouter.post(
 );
 
 categoryRouter.get(
-  "/:categoryId/urgenies/:urgencyId/tasks",
+  "/:categoryId/urgencies/:urgencyId/tasks",
   tasksController.readTasks
 );
 categoryRouter.get(
